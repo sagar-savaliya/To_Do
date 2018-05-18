@@ -55,6 +55,7 @@ input{
     display: flex;
     flex-wrap: wrap;
     text-align: left;
+
     list-style: none;
 }
 .todos li{
@@ -64,6 +65,7 @@ input{
     font-weight: 100;
     border-bottom: inset;
     text-align: center;
+    overflow: scroll;
     margin-right:5px; 
 }
 .delete {
@@ -79,7 +81,7 @@ input{
     text-decoration: line-through;
 } 
 .todos input:checked + label:before {
-    content: '✅';
+    content: '✔️';
 }
 
 .todos label {
