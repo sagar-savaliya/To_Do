@@ -2,21 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-       <!--<link rel='stylesheet' href="../style.css">-->
-       <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script> -->
+       <link rel='stylesheet' href="../src/style.css">
        <title>To Do</title>
-       
     </head>
     <body>
-    <div class="wrapper">
-        <h2>To Do</h2>
-       <form class='newtodo'>
-           <input name='todo' type="text" placeholder=" + New to do">
-           <input id='submitbtn' type="submit" value="+">
-       </form>
-       <ul class='todos'>
-       </ul>
-        <script src="bundle.js"></script>
+        <div class="todo__title">todos</div>
+
+    <div class="todo">
+        <input class='todo__new' type="text" placeholder="What needs to be done?">
+        <div class="todo__list">
+        </div>
+        <div class="todo__pannel">
+            <div class="focus"></div>
+            <div class="todo__left">2 item left</div>
+            <div class="todo__all" data-mode="all">All</div>
+            <div class="todo__active" data-mode="active">Active</div>
+            <div class="todo__completed">Clear Completed</div>
+        </div>
     </div>
+    <!--<script src="bundle.js"></script>-->
+    <script src="../src/script.js"></script>
     </body>
 </html>
