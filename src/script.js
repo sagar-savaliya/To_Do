@@ -1,5 +1,6 @@
 // import _ from 'lodash';
 import './style.css';
+import * as localstorage from "./localstorage";
 
 const jtodoNew = document.querySelector('.todo__new');
 const jlist = document.querySelector(".todo__list");
@@ -23,25 +24,11 @@ jclearCompleted.addEventListener('click',clearCompleted);
 
 let mode = "all";
 let jmode = jall;
-let todos = getFromLocalStorage("todos") || [];
-let activeToDoCount = getFromLocalStorage("activeToDoCount") || 0;
-
-function getFromLocalStorage(key) {
-    try {
-       return JSON.parse(localStorage.getItem(key));
-    }catch (e) {
-        console.log('An error has occurred:' + e.message);
-    }
-    return false;
-}
+let todos = localstorage.getFromLocalStorage("todos") || [];
+let activeToDoCount = localstorage.getFromLocalStorage("activeToDoCount") || 0;
 
 function updateActiveToDoCount() {
     jleft.innerHTML = `${activeToDoCount} ${activeToDoCount>1?'items':'item'} left`;
-}
-
-function updateLocalStorage() {
-    localStorage.setItem('todos',JSON.stringify(todos));
-    localStorage.setItem('activeToDoCount',JSON.stringify(activeToDoCount));
 }
 
 function populateList(){
@@ -66,11 +53,10 @@ function populateList(){
 function update() {
     updateActiveToDoCount();
     populateList();
-    updateLocalStorage();
+    localstorage.updateLocalStorage(todos,activeToDoCount);
 }
 
 update();
-
 
 function clearCompleted(e) {
     todos = todos.filter(todo => !todo.done);
