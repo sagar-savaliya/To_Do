@@ -60,14 +60,21 @@ body {
     width: 85%;
     word-wrap: break-word;
 }
+.todo__text:focus{
+    padding: 10px;
+    border: 1px solid rgb(5, 5, 5);
+    outline: 0;
+}
 
 .strike {
     text-decoration: line-through;
     color: rgba(0, 0, 0, 0.22);
+    text-decoration-color: rgba(0, 0, 0, 0.22);
 }
 
 .checkmark{
     margin-right: 10px;
+    margin-left: 2px;
     font-size: 15px;
     color: green;
 }
@@ -95,28 +102,34 @@ body {
     height: 30px;
 }
 
-.todo__left,.todo__all,.todo__active,.todo__completed{
+.todo__left,.todo__all,.todo__active,.todo__completed,.todo__clearcompleted{
     padding: 3px;
     font-size: 12px;
 }
 
-.todo__all,.todo__active,.todo__completed{
+.todo__left{
+    flex-basis: 60px;
+}
+
+.todo__all,.todo__active,.todo__completed,.todo__clearcompleted{
     cursor: pointer;
 }
 
-.focus{
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 10%;
-    width: 10px;
-    height: 10px;
-    background: rgba(0, 0, 0, 0.19);
-    transition: left 300ms;
+.todo__all, .todo__active,.todo__completed{
+    transition: background-color 700ms;
 }
 
 
-
-
+.todo__clearcompleted:hover{
+    text-decoration: underline;
+    text-decoration-color: #ff8f71;
+}
+.focus{
+    border: 1px solid black;
+    border-radius: 10%;
+    background: rgba(0, 0, 0, 0.19);
+    transition: background-color 500ms;
+}
 
 
 
