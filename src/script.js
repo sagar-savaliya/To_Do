@@ -1,5 +1,5 @@
 // import _ from 'lodash';
-// import './style.css';
+import './style.css';
 
 const jtodoNew = document.querySelector('.todo__new');
 const jlist = document.querySelector(".todo__list");
